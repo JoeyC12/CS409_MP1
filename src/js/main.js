@@ -1,34 +1,27 @@
-// Global variables
 let currentSlide = 0;
 let slides = [];
 let totalSlides = 0;
 
-// Showcase carousel variables
 let currentShowcaseSlide = 0;
 let showcaseSlides = [];
 let totalShowcaseSlides = 0;
 
-// Swiss Hiking carousel variables
 let currentSwissHikingSlide = 0;
 let swissHikingSlides = [];
 let totalSwissHikingSlides = 0;
 
-// Soccer Memory carousel variables
 let currentSoccerMemorySlide = 0;
 let soccerMemorySlides = [];
 let totalSoccerMemorySlides = 0;
 
-// Astro Photography carousel variables
 let currentAstroPhotographySlide = 0;
 let astroPhotographySlides = [];
 let totalAstroPhotographySlides = 0;
 
-// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     initializeWebsite();
 });
 
-// Initialize all website functionality
 function initializeWebsite() {
     setupNavigation();
     setupCarousel();
@@ -42,14 +35,12 @@ function initializeWebsite() {
     console.log('Website initialized successfully!');
 }
 
-// Navigation functionality
 function setupNavigation() {
     const navbar = document.getElementById('navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const positionIndicator = document.querySelector('.position-indicator');
     const sections = document.querySelectorAll('section');
     
-    // Smooth scrolling for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -66,7 +57,6 @@ function setupNavigation() {
         });
     });
     
-    // Handle scroll events
     window.addEventListener('scroll', function() {
         handleNavbarResize();
         updatePositionIndicator();
@@ -76,11 +66,9 @@ function setupNavigation() {
     function handleNavbarResize() {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
-            // 调整页面内容的顶部间距
             document.body.style.setProperty('--navbar-height', '60px');
         } else {
             navbar.classList.remove('scrolled');
-            // 恢复原始间距
             document.body.style.setProperty('--navbar-height', '80px');
         }
     }
@@ -114,20 +102,16 @@ function setupNavigation() {
     }
 }
 
-// Carousel functionality
 function setupCarousel() {
-    // Get slides after DOM is loaded
     slides = document.querySelectorAll('.carousel-item');
     totalSlides = slides.length;
     
     if (totalSlides === 0) return;
     
-    // Auto-play carousel
     setInterval(function() {
         nextSlide();
     }, 5000);
     
-    // Show first slide
     showSlide(0);
 }
 
@@ -161,7 +145,6 @@ function showSlide(n) {
         slides[n].classList.add('active');
     }
     
-    // Update indicators if they exist
     const indicators = document.querySelectorAll('.indicator');
     indicators.forEach((indicator, index) => {
         indicator.classList.remove('active');
@@ -171,15 +154,12 @@ function showSlide(n) {
     });
 }
 
-// Showcase Carousel functionality
 function setupShowcaseCarousel() {
-    // Get showcase slides after DOM is loaded (only Guatemala carousel)
     showcaseSlides = document.querySelectorAll('#blog .showcase-item');
     totalShowcaseSlides = showcaseSlides.length;
     
     if (totalShowcaseSlides === 0) return;
     
-    // Show first slide (no auto-play)
     showShowcaseSlide(0);
 }
 
@@ -213,7 +193,6 @@ function showShowcaseSlide(n) {
         showcaseSlides[n].classList.add('active');
     }
     
-    // Update showcase indicators if they exist (only Guatemala carousel)
     const indicators = document.querySelectorAll('#blog .showcase-indicator');
     indicators.forEach((indicator, index) => {
         indicator.classList.remove('active');
@@ -223,15 +202,12 @@ function showShowcaseSlide(n) {
     });
 }
 
-// Swiss Hiking Carousel functionality
 function setupSwissHikingCarousel() {
-    // Get swiss hiking slides after DOM is loaded
     swissHikingSlides = document.querySelectorAll('#swiss-hiking .showcase-item');
     totalSwissHikingSlides = swissHikingSlides.length;
     
     if (totalSwissHikingSlides === 0) return;
     
-    // Show first slide (no auto-play)
     showSwissHikingSlide(0);
 }
 
@@ -265,7 +241,6 @@ function showSwissHikingSlide(n) {
         swissHikingSlides[n].classList.add('active');
     }
     
-    // Update swiss hiking indicators if they exist
     const indicators = document.querySelectorAll('#swiss-hiking .showcase-indicator');
     indicators.forEach((indicator, index) => {
         indicator.classList.remove('active');
@@ -275,15 +250,12 @@ function showSwissHikingSlide(n) {
     });
 }
 
-// Soccer Memory Carousel functionality
 function setupSoccerMemoryCarousel() {
-    // Get soccer memory slides after DOM is loaded
     soccerMemorySlides = document.querySelectorAll('#soccer-memory .showcase-item');
     totalSoccerMemorySlides = soccerMemorySlides.length;
     
     if (totalSoccerMemorySlides === 0) return;
     
-    // Show first slide (no auto-play)
     showSoccerMemorySlide(0);
 }
 
@@ -317,7 +289,6 @@ function showSoccerMemorySlide(n) {
         soccerMemorySlides[n].classList.add('active');
     }
     
-    // Update soccer memory indicators if they exist
     const indicators = document.querySelectorAll('#soccer-memory .showcase-indicator');
     indicators.forEach((indicator, index) => {
         indicator.classList.remove('active');
@@ -327,15 +298,12 @@ function showSoccerMemorySlide(n) {
     });
 }
 
-// Astro Photography Carousel functionality
 function setupAstroPhotographyCarousel() {
-    // Get astro photography slides after DOM is loaded
     astroPhotographySlides = document.querySelectorAll('#astro-photography .showcase-item');
     totalAstroPhotographySlides = astroPhotographySlides.length;
     
     if (totalAstroPhotographySlides === 0) return;
     
-    // Show first slide (no auto-play)
     showAstroPhotographySlide(0);
 }
 
@@ -369,7 +337,6 @@ function showAstroPhotographySlide(n) {
         astroPhotographySlides[n].classList.add('active');
     }
     
-    // Update astro photography indicators if they exist
     const indicators = document.querySelectorAll('#astro-photography .showcase-indicator');
     indicators.forEach((indicator, index) => {
         indicator.classList.remove('active');
@@ -379,7 +346,6 @@ function showAstroPhotographySlide(n) {
     });
 }
 
-// Scroll animations
 function setupScrollAnimations() {
     const animatedElements = document.querySelectorAll('.blog-post, .gallery-item, .section-title');
     
@@ -404,9 +370,7 @@ function setupScrollAnimations() {
     });
 }
 
-// Modal functionality
 function setupModals() {
-    // Close modal when clicking outside of it
     window.addEventListener('click', function(event) {
         if (event.target.classList.contains('modal')) {
             event.target.style.display = 'none';
@@ -414,7 +378,6 @@ function setupModals() {
         }
     });
     
-    // Close modal with Escape key
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             const openModal = document.querySelector('.modal.show');
@@ -443,7 +406,6 @@ function closeModal(modalId) {
     }
 }
 
-// Gallery functionality
 function setupGallery() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     
@@ -453,14 +415,12 @@ function setupGallery() {
             const imgSrc = img.src;
             const imgAlt = img.alt;
             
-            // Create and show image modal
             showImageModal(imgSrc, imgAlt);
         });
     });
 }
 
 function showImageModal(src, alt) {
-    // Create modal dynamically
     const modal = document.createElement('div');
     modal.className = 'modal image-modal';
     modal.innerHTML = `
@@ -474,7 +434,6 @@ function showImageModal(src, alt) {
     modal.style.display = 'flex';
     modal.classList.add('show');
     
-    // Remove modal when clicking outside
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.remove();
@@ -482,7 +441,6 @@ function showImageModal(src, alt) {
     });
 }
 
-// Utility functions
 function debounce(func, wait, immediate) {
     let timeout;
     return function executedFunction() {
@@ -499,9 +457,7 @@ function debounce(func, wait, immediate) {
     };
 }
 
-// Performance optimization for scroll events
 const optimizedScrollHandler = debounce(function() {
-    // Any scroll-dependent operations can be added here
 }, 10);
 
 window.addEventListener('scroll', optimizedScrollHandler);
