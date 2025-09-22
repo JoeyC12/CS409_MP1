@@ -4,10 +4,443 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
+    <title>Haoqi Chen - Photography Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Haoqi Chen</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-section="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link" data-section="gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                </li>
+            </ul>
+            <div class="position-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section id="home" class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <!-- Photo Section (Left) -->
+            <div class="hero-photo">
+                <img src="assets/photo.jpg" alt="Haoqi Chen Portrait">
+            </div>
+            
+            <!-- Text Section (Right) -->
+            <div class="hero-text">
+                <h1>Haoqi Chen</h1>
+              
+                <p>I am a Master's student in Computer Science at the University of Illinois at Urbana-Champaign. I work with my advisor, Prof. Ely Kerman, on research at the intersection of symplectic geometry, optimization, and machine learning, with a focus on developing computational methods for mathematical modeling. Broadly, I am interested in applying AI and high-performance computing to complex systems, spanning from scientific simulations to large-scale information retrieval.</p>
+                <p>I have previously interned at the National Center for Supercomputing Applications, where I developed containerized HPC environments to streamline scientific workflows. I also have experience built multi-agent AI pipelines for international market intelligence and retrieval-augmented systems. I graduated with a Bachelor of Science in Mathematics and Computer Science, with Highest Distinction, from UIUC in 2025.</p>
+            </div>
+        </div>
+        
+        <!-- Carousel Section (Below) -->
+        <div class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/Guatemala/IMG_1304.jpg" alt="Photography Work 1">
+                            <div class="carousel-caption">
+                                <h3>Urban Landscapes</h3>
+                                <p>Exploring the beauty of city life</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/photo.jpg" alt="Photography Work 2">
+                            <div class="carousel-caption">
+                                <h3>Portrait Photography</h3>
+                                <p>Capturing authentic emotions</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/image.jpg" alt="Photography Work 3">
+                            <div class="carousel-caption">
+                                <h3>Nature & Wildlife</h3>
+                                <p>Finding magic in natural moments</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-prev" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-next" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Photography Showcase -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Photography Showcase</h2>
+            <div class="showcase-carousel-container">
+                <div class="showcase-carousel">
+                    <div class="showcase-carousel-inner">
+                        <div class="showcase-item active">
+                            <img src="assets/Guatemala/DSC00503.JPG" alt="Guatemala Photography 1">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Guatemala/DSC00530.JPG" alt="Guatemala Photography 2">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Guatemala/IMG_1186.jpg" alt="Guatemala Photography 3">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Guatemala/IMG_1304.jpg" alt="Guatemala Photography 4">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Guatemala/IMG_1330.jpg" alt="Guatemala Photography 5">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Guatemala/IMG_1333.jpg" alt="Guatemala Photography 6">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Guatemala/Live_photo.jpg" alt="Guatemala Photography 7">
+                        </div>
+                        <div class="showcase-content">
+                            <h3>Guatemala</h3>
+                            <p>Climbing Volcano and Tikal Mayan Ruins, amazing country.</p>
+                        </div>
+                    </div>
+                    <button class="showcase-prev" onclick="changeShowcaseSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="showcase-next" onclick="changeShowcaseSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="showcase-indicators">
+                        <span class="showcase-indicator active" onclick="goToShowcaseSlide(1)"></span>
+                        <span class="showcase-indicator" onclick="goToShowcaseSlide(2)"></span>
+                        <span class="showcase-indicator" onclick="goToShowcaseSlide(3)"></span>
+                        <span class="showcase-indicator" onclick="goToShowcaseSlide(4)"></span>
+                        <span class="showcase-indicator" onclick="goToShowcaseSlide(5)"></span>
+                        <span class="showcase-indicator" onclick="goToShowcaseSlide(6)"></span>
+                        <span class="showcase-indicator" onclick="goToShowcaseSlide(7)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2.5: Swiss Hiking Showcase -->
+    <section id="swiss-hiking" class="blog-section">
+        <div class="container">
+            <div class="showcase-carousel-container">
+                <div class="showcase-carousel">
+                    <div class="showcase-carousel-inner">
+                        <div class="showcase-item active">
+                            <img src="assets/Swiss hiking/DSC09233.jpg" alt="Swiss Hiking 1">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Swiss hiking/DSC09251.jpg" alt="Swiss Hiking 2">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Swiss hiking/DSC09274.jpg" alt="Swiss Hiking 3">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Swiss hiking/DSC09282.jpg" alt="Swiss Hiking 4">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Swiss hiking/DSC09284.jpg" alt="Swiss Hiking 5">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Swiss hiking/DSC09289.jpg" alt="Swiss Hiking 6">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Swiss hiking/DSC09307.jpg" alt="Swiss Hiking 7">
+                        </div>
+                        <div class="showcase-content">
+                            <h3>Hiking in Swiss</h3>
+                            <p>Interlaken Hardergrat Trail, Oeschinensee Lake, unforgettable memories</p>
+                        </div>
+                    </div>
+                    <button class="showcase-prev" onclick="changeSwissHikingSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="showcase-next" onclick="changeSwissHikingSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="showcase-indicators">
+                        <span class="showcase-indicator active" onclick="goToSwissHikingSlide(1)"></span>
+                        <span class="showcase-indicator" onclick="goToSwissHikingSlide(2)"></span>
+                        <span class="showcase-indicator" onclick="goToSwissHikingSlide(3)"></span>
+                        <span class="showcase-indicator" onclick="goToSwissHikingSlide(4)"></span>
+                        <span class="showcase-indicator" onclick="goToSwissHikingSlide(5)"></span>
+                        <span class="showcase-indicator" onclick="goToSwissHikingSlide(6)"></span>
+                        <span class="showcase-indicator" onclick="goToSwissHikingSlide(7)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2.6: Soccer Memory Showcase -->
+    <section id="soccer-memory" class="blog-section">
+        <div class="container">
+            <div class="showcase-carousel-container">
+                <div class="showcase-carousel">
+                    <div class="showcase-carousel-inner">
+                        <div class="showcase-item active">
+                            <img src="assets/Soccer Memory/DSC08999.jpg" alt="Soccer Memory 1">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Soccer Memory/DSC09055.jpg" alt="Soccer Memory 2">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Soccer Memory/DSC09060.jpg" alt="Soccer Memory 3">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Soccer Memory/DSC09061.jpg" alt="Soccer Memory 4">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Soccer Memory/DSC09108.jpg" alt="Soccer Memory 5">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Soccer Memory/DSC09486.jpg" alt="Soccer Memory 6">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Soccer Memory/DSC09488.jpg" alt="Soccer Memory 7">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Soccer Memory/DSC09098.jpg" alt="Soccer Memory 8">
+                        </div>
+                        <div class="showcase-content">
+                            <h3>Soccer Memory</h3>
+                            <p>A big fan of FC Barcelona</p>
+                        </div>
+                    </div>
+                    <button class="showcase-prev" onclick="changeSoccerMemorySlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="showcase-next" onclick="changeSoccerMemorySlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="showcase-indicators">
+                        <span class="showcase-indicator active" onclick="goToSoccerMemorySlide(1)"></span>
+                        <span class="showcase-indicator" onclick="goToSoccerMemorySlide(2)"></span>
+                        <span class="showcase-indicator" onclick="goToSoccerMemorySlide(3)"></span>
+                        <span class="showcase-indicator" onclick="goToSoccerMemorySlide(4)"></span>
+                        <span class="showcase-indicator" onclick="goToSoccerMemorySlide(5)"></span>
+                        <span class="showcase-indicator" onclick="goToSoccerMemorySlide(6)"></span>
+                        <span class="showcase-indicator" onclick="goToSoccerMemorySlide(7)"></span>
+                        <span class="showcase-indicator" onclick="goToSoccerMemorySlide(8)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2.7: Astro Photography Showcase -->
+    <section id="astro-photography" class="blog-section">
+        <div class="container">
+            <div class="showcase-carousel-container">
+                <div class="showcase-carousel">
+                    <div class="showcase-carousel-inner">
+                        <div class="showcase-item active">
+                            <img src="assets/Astro/DSC07916.jpg" alt="Astro Photography 1">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Astro/DSC00366.jpg" alt="Astro Photography 2">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Astro/20240511-DSC07944.jpg" alt="Astro Photography 3">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Astro/20231214-未标题-1.JPG" alt="Astro Photography 4">
+                        </div>
+                        <div class="showcase-item">
+                            <img src="assets/Astro/20230911-DSC07497.JPG" alt="Astro Photography 5">
+                        </div>
+                        <div class="showcase-content">
+                            <h3>Astro Photography</h3>
+                            <p>Capturing the beauty of the cosmos and celestial wonders</p>
+                        </div>
+                    </div>
+                    <button class="showcase-prev" onclick="changeAstroPhotographySlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="showcase-next" onclick="changeAstroPhotographySlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="showcase-indicators">
+                        <span class="showcase-indicator active" onclick="goToAstroPhotographySlide(1)"></span>
+                        <span class="showcase-indicator" onclick="goToAstroPhotographySlide(2)"></span>
+                        <span class="showcase-indicator" onclick="goToAstroPhotographySlide(3)"></span>
+                        <span class="showcase-indicator" onclick="goToAstroPhotographySlide(4)"></span>
+                        <span class="showcase-indicator" onclick="goToAstroPhotographySlide(5)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Photography Gallery -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/20220525-DSC04411.jpg" alt="Gallery Photo 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/20220525-DSC04420.jpg" alt="Gallery Photo 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/20220525-DSC04443.jpg" alt="Gallery Photo 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/20220526-DSC04516.jpg" alt="Gallery Photo 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/20220606-DSC05028.jpg" alt="Gallery Photo 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/DSC08809.jpg" alt="Gallery Photo 6">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/DSC08840.jpg" alt="Gallery Photo 7">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/DSC08850.jpg" alt="Gallery Photo 8">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/DSC08889.jpg" alt="Gallery Photo 9">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/DSC09615.jpg" alt="Gallery Photo 10">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/DSC09643.jpg" alt="Gallery Photo 11">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/Photogallery/DSC09655.jpg" alt="Gallery Photo 12">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Collaborate</h3>
+                    <p>Interested in working together? I'd love to talk with you.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>haoqic2@illinois.edu</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>217 979 9718</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Haoqi Chen Photography</h3>
+                    <p>Capturing life's beautiful moments</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Haoqi Chen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+            <h2>About Haoqi Chen</h2>
+            <p>I'm a passionate photographer and PhD student in Electrical and Computer Engineering at the University of Illinois at Urbana-Champaign.</p>
+            <p>My journey with photography began as a hobby, but it has evolved into a profound way of expressing creativity and capturing the beauty in everyday moments.</p>
+        </div>
+    </div>
+
+ 
+
+    <script src="js/main.js"></script>
     </body>
 </html>
